@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PortalController : MonoBehaviour
+public class PortalGenerator : MonoBehaviour
 {
     public GameObject PortalPrefab;
     private MazeModel mazeModel;

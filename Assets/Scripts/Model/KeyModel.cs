@@ -8,7 +8,7 @@ public class KeyModel : MonoBehaviour
     
     void Awake()
     {
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         KeyTeeth = new int[keyCount][];
         for (int i = 0; i < keyCount; i++)
@@ -19,7 +19,6 @@ public class KeyModel : MonoBehaviour
                 KeyTeeth[i][j] = UnityEngine.Random.Range(1, KeyView.MaxToothLen);
             }
         }
-        Debug.Log("KeyTeeth: "+KeyTeeth.Length);
     }
 
     // Update is called once per frame

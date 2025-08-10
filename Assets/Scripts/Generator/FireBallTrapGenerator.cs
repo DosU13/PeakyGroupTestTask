@@ -1,14 +1,20 @@
+using System.Linq;
 using System.Security.Principal;
 using UnityEngine;
 
 public class FireBallTrapGenerator : MonoBehaviour
 {
     public GameObject FireballPrefab;
-    public WallGenerator wallView; // Assign in Inspector
+    private WallGenerator wallGenerator; 
     public float MediumModeSpawnInterval = 1f;
     
     private float spawnInterval => MediumModeSpawnInterval / GameSessionData.TrapCountFactor;
     private float spawnTimer;
+
+    private void Awake()
+    {
+        wallGenerator = Resources.FindObjectsOfTypeAll<WallGenerator>().FirstOrDefault();
+    }
 
     private void Start()
     {
@@ -32,11 +38,11 @@ public class FireBallTrapGenerator : MonoBehaviour
         {
             bool vertical = Random.value > 0.5f;
 
-            if (vertical && wallView.verticalWalls != null)
+            if (vertical && wallGenerator.verticalWalls != null)
             {
-                int x = Random.Range(1, wallView.verticalWalls.GetLength(0) - 1); // avoid borders
-                int y = Random.Range(0, wallView.verticalWalls.GetLength(1));
-                GameObject wall = wallView.verticalWalls[x, y];
+                int x = Random.Range(1, wallGenerator.verticalWalls.GetLength(0) - 1); // avoid borders
+                int y = Random.Range(0, wallGenerator.verticalWalls.GetLength(1));
+                GameObject wall = wallGenerator.verticalWalls[x, y];
 
                 if (wall != null && wall.transform.GetChild(0).gameObject.activeSelf)
                 {
@@ -48,11 +54,11 @@ public class FireBallTrapGenerator : MonoBehaviour
                     return;
                 }
             }
-            else if (!vertical && wallView.horizontalWalls != null)
+            else if (!vertical && wallGenerator.horizontalWalls != null)
             {
-                int x = Random.Range(0, wallView.horizontalWalls.GetLength(0));
-                int y = Random.Range(1, wallView.horizontalWalls.GetLength(1) - 1); // avoid borders
-                GameObject wall = wallView.horizontalWalls[x, y];
+                int x = Random.Range(0, wallGenerator.horizontalWalls.GetLength(0));
+                int y = Random.Range(1, wallGenerator.horizontalWalls.GetLength(1) - 1); // avoid borders
+                GameObject wall = wallGenerator.horizontalWalls[x, y];
 
                 if (wall != null && wall.transform.GetChild(0).gameObject.activeSelf)
                 {
