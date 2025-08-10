@@ -24,7 +24,7 @@ public class PuzzleKeyNLockGenerator : MonoBehaviour
 
         if (keyModel == null) return;
 
-        int keyCount = keyModel.keyCount;
+        int keyCount = keyModel.keyMaxCount;
 
         // Precompute lock positions (fixed order)
         Vector3[] lockPositions = new Vector3[keyCount];
