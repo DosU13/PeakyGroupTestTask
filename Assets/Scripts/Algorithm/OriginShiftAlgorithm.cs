@@ -47,36 +47,97 @@ public class OriginShiftAlgorithm : MonoBehaviour
             MazeModel.horizontalVectors[origin.x, origin.y] = HorizontalVector.Zero;
     }
 
-    private MovementDirection lastDirection = MovementDirection.Up;
+
+    private List<MovementDirection> ShiftPath = new();
+    private void FixedUpdate()
+    {
+        if (ShiftPath.Count <= 0) return;
+        for (int i = 0; i < ShiftPath.Count / 2; i++)
+        {
+            Shift(ShiftPath[i]);
+        }
+        ShiftPath.RemoveRange(0, ShiftPath.Count/2);
+    }
+
+
+    public void AsyncRandomShift()
+    {
+        ShiftPath = GeneratePathForShift();
+    }
 
     public void RandomShift()
     {
-        // Get all possible directions
-        var possibleDirections = new List<MovementDirection>
+        var path = GeneratePathForShift();
+        foreach (var d in path)
         {
-            MovementDirection.Up,
-            MovementDirection.Down,
-            MovementDirection.Left,
-            MovementDirection.Right
-        };
+            Shift(d);
+        }
+    }
+    public List<MovementDirection> GeneratePathForShift()
+    {
+        var res = new List<MovementDirection>();
+        bool[,] visited = new bool[MazeModel.width, MazeModel.height];
+        List<Vector2Int> notVisited;
+        var point = new Vector2Int(origin.x, origin.y);
+        do
+        {
+            notVisited = new();
+            for (int i = 0; i < MazeModel.width; i++)
+            {
+                for (int j = 0; j < MazeModel.height; j++)
+                {
+                    if (!visited[i, j]) notVisited.Add(new Vector2Int(i, j));
+                }
+            }
 
-        possibleDirections.Remove(lastDirection);
+            if (notVisited.Count == 0) continue;
+            var shiftPath = GeneratePathForShift(point, notVisited[Random.Range(0, notVisited.Count)]);
+            foreach (var d in shiftPath)
+            {
+                switch (d)
+                {
+                    case MovementDirection.Up:
+                        point.y++;
+                        break;
+                    case MovementDirection.Down:
+                        point.y--;
+                        break;
+                    case MovementDirection.Left:
+                        point.x--;
+                        break;
+                    case MovementDirection.Right:
+                        point.x++;
+                        break;
+                }
+                visited[point.x, point.y] = true;
+            }
+            res.AddRange(shiftPath);
+        }while (notVisited.Count > 0);
+        return res;
+    }
 
-        // Remove directions that would go outside the maze
-        if (origin.y >= MazeModel.height - 1) possibleDirections.Remove(MovementDirection.Up);
-        if (origin.y <= 0) possibleDirections.Remove(MovementDirection.Down);
-        if (origin.x >= MazeModel.width - 1) possibleDirections.Remove(MovementDirection.Right);
-        if (origin.x <= 0) possibleDirections.Remove(MovementDirection.Left);
+    private List<MovementDirection> GeneratePathForShift(Vector2Int from, Vector2Int to)
+    {
+        var res = new List<MovementDirection>();
+        if (to.x > from.x)
+        {
+            res.AddRange(Enumerable.Repeat(MovementDirection.Right, to.x - from.x));
+        }
+        else
+        {
+            res.AddRange(Enumerable.Repeat(MovementDirection.Left, from.x - to.x));
+        }
 
-        // Safety check
-        if (possibleDirections.Count == 0)
-            return;
-
-        MovementDirection newDir = possibleDirections[Random.Range(0, possibleDirections.Count)];
-
-        Shift(newDir);
-
-        lastDirection = newDir;
+        if (to.y > from.y)
+        {
+            res.AddRange(Enumerable.Repeat(MovementDirection.Up, to.y - from.y));
+        }
+        else
+        {
+            res.AddRange(Enumerable.Repeat(MovementDirection.Down, from.y - to.y));
+        }
+        res = res.OrderBy(_ => Random.value).ToList();
+        return res;
     }
 
 
@@ -97,11 +158,7 @@ public class OriginShiftAlgorithm : MonoBehaviour
             }
         }
         origin = new Vector2Int(0, 0);
-        var iterCnt = 10000;
-        while (iterCnt-- > 0)
-        {
-            RandomShift();
-        }
+        RandomShift();
         Debug.Log(nameof(OriginShiftAlgorithm) + ":" + nameof(Generate) + " End");
     }
 }
