@@ -48,7 +48,7 @@ public class MainMenuManager : MonoBehaviour
     {
         GameSessionData.MazeSize = mazeSize;
         GameSessionData.TrapCountFactor = trapCountFactor;
-        KeyModel.Reset();
+        KeyModel?.Reset();
 
         SceneManager.LoadScene(MainSceneName, LoadSceneMode.Single);
     }
