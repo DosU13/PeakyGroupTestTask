@@ -15,14 +15,12 @@ public class KeysController : MonoBehaviour
 
     void Start()
     {
-        keyCount = keyModel.keyCount;
     }
 
-    private int keyCount;
     public void OnKeyCollected()
     {
-        keyCount--;
-        if (keyCount == 0)
+        keyModel.CollectedKeysCount++;
+        if (keyModel.CollectedKeysCount >= keyModel.keyMaxCount)
         {
             portalController.CreatePortal();
         }

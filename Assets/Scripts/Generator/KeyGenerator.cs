@@ -17,7 +17,7 @@ public class KeyGenerator : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < keyModel.keyCount; i++)
+        for (int i = 0; i < keyModel.keyMaxCount; i++)
         {
             Vector2Int cell = new Vector2Int(
                 Random.Range(0, mazeModel.width),
