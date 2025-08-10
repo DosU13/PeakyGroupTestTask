@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6570714971055960154}
   - component: {fileID: 4695224528806122912}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square
   m_TagString: Portal
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612230417612395560}
   - component: {fileID: 7753049569272527494}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Portal
   m_TagString: Portal
   m_Icon: {fileID: 0}

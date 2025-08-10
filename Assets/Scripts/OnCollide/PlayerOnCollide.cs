@@ -28,11 +28,9 @@ public class PlayerOnCollide : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Enemy":
-                Debug.Log("Enemy!!!");
                 playerModel.Damage();
                 break;
             case "Key":
-                Debug.Log("Key!!!");
                 var keyView = collision.gameObject.GetComponent<KeyView>();
                 keyView.Collect();
                 break;

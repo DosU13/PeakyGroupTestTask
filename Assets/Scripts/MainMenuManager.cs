@@ -23,24 +23,24 @@ public class MainMenuManager : MonoBehaviour
 
     public void PlaySmall()
     {
-        PlayGame(10);
+        PlayGame(10, 0.5f);
     }
 
     public void PlayMedium()
     {
-        PlayGame(20);
+        PlayGame(20, 1);
     }
 
     public void PlayLarge()
     {
-        PlayGame(40);
+        PlayGame(40, 2);
     }
 
     private int MazeSize;
-    private void PlayGame(int mazeSize)
+    private void PlayGame(int mazeSize, float trapCountFactor)
     {
         GameSessionData.MazeSize = mazeSize;
-        GameSessionData.SpikeCount = mazeSize / 5;
+        GameSessionData.TrapCountFactor = trapCountFactor;
 
         SceneManager.LoadScene(MainSceneName, LoadSceneMode.Single);
     }
