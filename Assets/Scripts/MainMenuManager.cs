@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public string MainSceneName;
+    public KeyModel KeyModel;
+
+    private void Awake()
+    {
+        KeyModel = Resources.FindObjectsOfTypeAll<KeyModel>().FirstOrDefault();
+    }
+
     void Start()
     {
         
@@ -41,6 +48,7 @@ public class MainMenuManager : MonoBehaviour
     {
         GameSessionData.MazeSize = mazeSize;
         GameSessionData.TrapCountFactor = trapCountFactor;
+        KeyModel?.Reset();
 
         SceneManager.LoadScene(MainSceneName, LoadSceneMode.Single);
     }

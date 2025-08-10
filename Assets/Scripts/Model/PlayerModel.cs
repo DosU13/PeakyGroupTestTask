@@ -24,4 +24,9 @@ public class PlayerModel : MonoBehaviour
         HP = PlayerMaxHP;
         Alive = HP > 0;
     }
+
+    internal void Heal()
+    {
+        HP++;
+    }
 }
