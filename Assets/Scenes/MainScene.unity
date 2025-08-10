@@ -401,6 +401,7 @@ Transform:
   - {fileID: 2062976794}
   - {fileID: 393403070}
   - {fileID: 1258164591}
+  - {fileID: 1827986640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &393403069
@@ -901,7 +902,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656429546}
-  - component: {fileID: 656429547}
   - component: {fileID: 656429548}
   m_Layer: 5
   m_Name: Keys
@@ -929,20 +929,6 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &656429547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656429545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2752814658863b84894ba28a482cd96b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartPrefab: {fileID: 9201870419307453443, guid: bf188a49b4dfee14c93463f9a5005fe7, type: 3}
-  heartWidth: 120
 --- !u!114 &656429548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,9 +941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68733b378b8acb74b9a7fb482f0eaeee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyPrefab: {fileID: 9201870419307453443, guid: bf188a49b4dfee14c93463f9a5005fe7, type: 3}
+  keyPrefab: {fileID: 9207788606224901414, guid: 021f71df1a6a84e438e8cc2608e06fab, type: 3}
   keyWidth: 100
-  Scale: 100
 --- !u!1 &795508190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deb0404a0684ce429277d59a2a49a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCount: 3
+  keyMaxCount: 3
 --- !u!1 &1034393418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1607,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartPrefab: {fileID: 9207788606224901414, guid: 0d72929c358a01b439a84cc1fe88b100, type: 3}
   heartWidth: 120
+--- !u!1 &1827986639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827986640}
+  - component: {fileID: 1827986641}
+  m_Layer: 0
+  m_Name: Heart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1827986640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827986639}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 317286255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827986641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827986639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96020581cf93e4d43aa87ef73568a366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyCollected:
+    m_PersistentCalls:
+      m_Calls: []
+  HeartCount: 1
+  heartPrefab: {fileID: 7314290711008511496, guid: bc7ddf284a6bcdf4b83783e67aaa8971, type: 3}
 --- !u!1 &1979198716
 GameObject:
   m_ObjectHideFlags: 0

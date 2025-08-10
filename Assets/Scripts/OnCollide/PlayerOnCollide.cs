@@ -37,6 +37,10 @@ public class PlayerOnCollide : MonoBehaviour
             case "Portal":
                 gameManager.Win();
                 break;
+            case "Heart":
+                Destroy(collision.gameObject);
+                playerModel.Heal();
+                break;
         }
     }
 }
