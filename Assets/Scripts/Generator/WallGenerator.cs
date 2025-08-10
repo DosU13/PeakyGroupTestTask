@@ -1,15 +1,16 @@
+using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WallView : MonoBehaviour
+public class WallGenerator : MonoBehaviour
 {
     private MazeModel mazeModel;
     public GameObject wallPrefab;
     public bool TestMode;
 
-    private GameObject[,] verticalWalls;
-    private GameObject[,] horizontalWalls;
+    [NonSerialized] public GameObject[,] verticalWalls;
+    [NonSerialized] public GameObject[,] horizontalWalls;
 
     private void Awake()
     {

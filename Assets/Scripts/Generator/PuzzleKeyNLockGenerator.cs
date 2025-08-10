@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class PuzzleKeyNLockController : MonoBehaviour
+public class PuzzleKeyNLockGenerator : MonoBehaviour
 {
     [Header("Prefabs")]
     public GameObject keyPrefab;
@@ -14,17 +14,14 @@ public class PuzzleKeyNLockController : MonoBehaviour
 
     private KeyModel keyModel;
 
-    private void Awake()
+    void Start()
     {
         keyModel = Resources.FindObjectsOfTypeAll<KeyModel>().FirstOrDefault();
         if (keyModel == null)
         {
             Debug.LogError("KeyModel not found in resources.");
         }
-    }
 
-    void Start()
-    {
         if (keyModel == null) return;
 
         int keyCount = keyModel.keyCount;

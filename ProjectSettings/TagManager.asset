@@ -17,6 +17,9 @@ TagManager:
   - 
   - 
   - 
+  - Player
+  - Enemy
+  - Collectable
   - 
   - 
   - 
@@ -25,10 +28,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Environment
   - 
   - 
   - 

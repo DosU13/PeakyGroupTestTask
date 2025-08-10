@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class SpikeController : MonoBehaviour
+public class SpikeGenerator : MonoBehaviour
 {
     private SpikeModel spikeModel;
     private MazeModel mazeModel;

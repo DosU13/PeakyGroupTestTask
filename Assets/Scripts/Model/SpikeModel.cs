@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SpikeModel : MonoBehaviour
 {
-    public int spikeCount => GameSessionData.SpikeCount;
+    public int MediumModeSpikeCount = 6;
+    public int spikeCount => (int)(GameSessionData.TrapCountFactor * MediumModeSpikeCount);
 
     void Start()
     {

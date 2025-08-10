@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3400411555297413694}
   - component: {fileID: 2574757867694599360}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6276225886579760150}
   - component: {fileID: 8698657834771513400}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8264900767554548008}
   - component: {fileID: 7073878421877007964}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2385658317431969862}
   - component: {fileID: 1579610403301606799}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tooth1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8539604834426942965}
   - component: {fileID: 7985042938426093054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tooth3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8549307984433405645}
   - component: {fileID: 1879667629880940875}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tooth2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 598855833427958133}
   - component: {fileID: 9121365616571447859}
   - component: {fileID: 8089774974324676815}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Key
   m_TagString: Key
   m_Icon: {fileID: 0}
@@ -573,22 +573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647a67021a27d34479d6eed098edd6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teeth: 
-  KeyCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
 --- !u!61 &8089774974324676815
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MazeAlgorithm : MonoBehaviour
+public class FireBallOnCollide : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +12,10 @@ public class MazeAlgorithm : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(transform.parent.parent.gameObject);
     }
 }
