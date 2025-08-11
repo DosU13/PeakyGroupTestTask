@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPrefab: {fileID: 9207788606224901414, guid: 021f71df1a6a84e438e8cc2608e06fab, type: 3}
-  keyWidth: 100
+  keyWidth: 60
 --- !u!1 &795508190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1223,6 @@ GameObject:
   - component: {fileID: 1034393420}
   - component: {fileID: 1034393422}
   - component: {fileID: 1034393424}
-  - component: {fileID: 1034393425}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -1285,18 +1284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerMaxHP: 3
---- !u!114 &1034393425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034393418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf66c48c5266a04b95e0424d62a064e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1097335225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,7 +1695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartPrefab: {fileID: 9207788606224901414, guid: 0d72929c358a01b439a84cc1fe88b100, type: 3}
-  heartWidth: 120
+  heartWidth: 60
 --- !u!1 &1827986639
 GameObject:
   m_ObjectHideFlags: 0

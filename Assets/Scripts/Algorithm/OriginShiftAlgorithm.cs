@@ -52,11 +52,11 @@ public class OriginShiftAlgorithm : MonoBehaviour
     private void FixedUpdate()
     {
         if (ShiftPath.Count <= 0) return;
-        for (int i = 0; i < ShiftPath.Count / 2; i++)
+        for (int i = 0; i < ShiftPath.Count / 4; i++)
         {
             Shift(ShiftPath[i]);
         }
-        ShiftPath.RemoveRange(0, ShiftPath.Count/2);
+        ShiftPath.RemoveRange(0, ShiftPath.Count/4);
     }
 
 
