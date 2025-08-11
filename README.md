@@ -15,7 +15,7 @@ https://dosu13.itch.io/the-maze
 
 3. Tested with Unity 6000.x.x.
 
-4. Open the MainScene from Assets/Scenes/.
+4. Open the MainMenu from Assets/Scenes/.
 
 5. Press Play in the Unity Editor.
 
@@ -45,7 +45,7 @@ https://dosu13.itch.io/the-maze
 
 3. Проект протестирован в Unity версии 6000.x.x.
 
-4. Откройте сцену MainScene из папки Assets/Scenes/.
+4. Откройте сцену MainMenu из папки Assets/Scenes/.
 
 5. Нажмите Play в редакторе Unity.
 
